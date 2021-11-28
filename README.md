@@ -39,8 +39,8 @@ euro_to_dollar['US_dollar'] = euro_to_dollar['US_dollar'].astype(float)
 
 - We generated a line plot to visualize the evolution of the euro-dollar exchange rate and of the euro-real-dollar exchange rate.
 - We used the rolling mean technique to smooth the graph curve
-
+<center>
 <img width="431" alt="Captura de Tela 2021-11-28 às 19 30 00" src="https://user-images.githubusercontent.com/27768375/143788718-9e85a6a6-0b78-43e8-80cd-96d9fc81a4db.png">
-
+</center>
 
 ### Based on the production ready code methods provided in [Production_Ready_Code.ipynb](https://github.com/ivanovitchm/mlops/blob/main/week_04/Production_Ready_Code.ipynb), we made use of try and except to avoid breaks in code execution due to misuse in data manipulation.
