@@ -66,6 +66,16 @@ biden = bush_obama_trump_biden.copy(
 - We show comparatively how the euro-real-dollar rate changed under the last five Brazil presidents (FHC (2000-2002), Lula (2003-2010), Dilma Rousseff (2011-2016), Michel Temer (2016-2018) and Jair M. Bosonaro(2019-2021)). We can use a line plot. See the code we use to prepare the dataset for this use:
 
 ~~~ python
+exchange_rates.rename(columns={'[Brazilian real ]': 'BRL_real'}, inplace=True) # padronizando para trabalhar com os dados
+euro_to_dollar_to_real = euro_to_dollar.copy()
+euro_to_dollar_to_real['BRL_real'] = exchange_rates['BRL_real']
+euro_to_dollar_to_real['BRL_real'] = exchange_rates['BRL_real']
+euro_to_dollar_to_real = euro_to_dollar_to_real[euro_to_dollar_to_real['BRL_real'] != '-']
+euro_to_dollar_to_real['BRL_real'] = euro_to_dollar_to_real['BRL_real'].astype(float)
+#Taxa de cambio do Euro e do dólar, agora em relação ao Real brasileiro
+brl_to_euro_to_dollar = euro_to_dollar_to_real[['Time', 'BRL_real']].copy()
+brl_to_euro_to_dollar.rename(columns={'BRL_real': 'euro_rate'}, inplace=True)
+brl_to_euro_to_dollar['dollar_rate'] = euro_to_dollar_to_real['BRL_real']/euro_to_dollar_to_real['US_dollar']
 
 ~~~
 
@@ -74,7 +84,26 @@ biden = bush_obama_trump_biden.copy(
   ![BRL-USD rate](https://user-images.githubusercontent.com/27768375/143790094-884e48b5-4741-40cd-8b87-3f80579524cc.jpeg)
 
 </center>
-  
+ 
+~~~ python
+brl_to_euro_to_dollar['dollar_rolling_mean'] = brl_to_euro_to_dollar['dollar_rate'].rolling(50).mean()
+brl_to_euro_to_dollar['euro_rolling_mean'] = brl_to_euro_to_dollar['euro_rate'].rolling(50).mean()
+todos_presidentes = brl_to_euro_to_dollar.copy(
+                   )[(brl_to_euro_to_dollar['Time'].dt.year >= 2000) & (brl_to_euro_to_dollar['Time'].dt.year < 2021)]
+fhc = todos_presidentes.copy(
+       )[todos_presidentes['Time'].dt.year < 2002]
+lula = todos_presidentes.copy(
+       )[(todos_presidentes['Time'].dt.year >= 2002) & (todos_presidentes['Time'].dt.year < 2010)]
+dilma = todos_presidentes.copy(
+       )[(todos_presidentes['Time'].dt.year >= 2010) & ((todos_presidentes['Time'].dt.year < 2017) & (todos_presidentes['Time'].dt.month < 9))]
+temer = todos_presidentes.copy(
+       )[((todos_presidentes['Time'].dt.year >= 2016) & (todos_presidentes['Time'].dt.month >= 9))  & (todos_presidentes['Time'].dt.year < 2019)]
+jair = todos_presidentes.copy(
+       )[(todos_presidentes['Time'].dt.year >= 2019)  & (todos_presidentes['Time'].dt.year < 2022)]
+# presidentes = [fhc, lula, dilma, temer, bozo]
+# anos = [2000,2001,2002.2003,2004,2005,2006,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021]
+~~~
+ 
 <center>
 
   ![BRL-USD rate under the last 5 Brazilian presidents](https://user-images.githubusercontent.com/27768375/143790044-d367f635-8921-4e40-b634-a3d14d6d9a0d.jpeg)
