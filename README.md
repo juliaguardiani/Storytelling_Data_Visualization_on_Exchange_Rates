@@ -43,6 +43,7 @@ euro_to_dollar['US_dollar'] = euro_to_dollar['US_dollar'].astype(float)
 - We show how the euro-dollar rate changed during the 2007-2008's financial crisis.
 <img width="541" alt="Captura de Tela 2021-11-28 às 19 39 14" src="https://user-images.githubusercontent.com/27768375/143789096-393a91ee-248f-4185-ae68-42129224a8d1.png">
 
++ Note: At this point our extension begins. In the original guided project there is no analysis for the period of President Biden's government
 - We show comparatively how the euro-dollar rate changed under the last four US presidents (George W. Bush (2001-2009), Barack Obama (2009-2017), Donald Trump (2017-2020) and Joe Biden(2021)). We can use a line plot. See the code we use to prepare the dataset for this use:
 ~~~ python
 bush_obama_trump_biden = euro_to_dollar.copy(
@@ -58,7 +59,7 @@ biden = bush_obama_trump_biden.copy(
 ~~~
 
 <img width="792" alt="Captura de Tela 2021-11-28 às 19 49 43" src="https://user-images.githubusercontent.com/27768375/143789461-d73e5147-73af-472a-83f9-f3603e77e786.png">
-- Note: At this point our extension begins. In the original guided project there is no analysis for the period of President Biden's government
+
 
 
 ### Based on the production ready code methods provided in [Production_Ready_Code.ipynb](https://github.com/ivanovitchm/mlops/blob/main/week_04/Production_Ready_Code.ipynb), we made use of try and except to avoid breaks in code execution due to misuse in data manipulation.
