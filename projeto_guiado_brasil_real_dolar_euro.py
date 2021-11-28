@@ -224,8 +224,7 @@ class DataStoryTeller:
             backgroundcolor='#4d4d4d',
             size=14
         )
-        plt.savefig('dollar_real_storytelling.png', bbox_inches='tight')
-
+ 
     def euro_real_storytelling(self):
         """
         Real X Euro em relação a cada presidente do Brasil.
@@ -339,8 +338,6 @@ class DataStoryTeller:
             backgroundcolor='#4d4d4d',
             size=14
         )
-        plt.savefig('euro_real_storytelling.png', bbox_inches='tight')
-
 
 if __name__ == '__main__':
     data_story_teller = DataStoryTeller()
