@@ -40,10 +40,12 @@ euro_to_dollar['US_dollar'] = euro_to_dollar['US_dollar'].astype(float)
 - We generated a line plot to visualize the evolution of the euro-dollar exchange rate and of the euro-real-dollar exchange rate.
 - We used the rolling mean technique to smooth the graph curve  
 <img width="431" alt="Captura de Tela 2021-11-28 às 19 30 00" src="https://user-images.githubusercontent.com/27768375/143788718-9e85a6a6-0b78-43e8-80cd-96d9fc81a4db.png">
+
 - We show how the euro-dollar rate changed during the 2007-2008's financial crisis.
+
 <img width="541" alt="Captura de Tela 2021-11-28 às 19 39 14" src="https://user-images.githubusercontent.com/27768375/143789096-393a91ee-248f-4185-ae68-42129224a8d1.png">
 
-+ Note: At this point our extension begins. In the original guided project there is no analysis for the period of President Biden's government
+- Note: At this point our extension begins. In the original guided project there is no analysis for the period of President Biden's government
 - We show comparatively how the euro-dollar rate changed under the last four US presidents (George W. Bush (2001-2009), Barack Obama (2009-2017), Donald Trump (2017-2020) and Joe Biden(2021)). We can use a line plot. See the code we use to prepare the dataset for this use:
 ~~~ python
 bush_obama_trump_biden = euro_to_dollar.copy(
