@@ -62,6 +62,20 @@ biden = bush_obama_trump_biden.copy(
 
 <img width="792" alt="Captura de Tela 2021-11-28 às 19 49 43" src="https://user-images.githubusercontent.com/27768375/143789461-d73e5147-73af-472a-83f9-f3603e77e786.png">
 
+- Note: more extensions, in the original guided project there is no Brazilian real case study.
+- We show comparatively how the euro-real-dollar rate changed under the last five Brazil presidents (FHC (2000-2002), Lula (2003-2010), Dilma Rousseff (2011-2016), Michel Temer (2016-2018) and Jair M. Bosonaro(2019-2021)). We can use a line plot. See the code we use to prepare the dataset for this use:
 
+~~~ python
+
+~~~
+
+<center>
+
+![BRL-USD rate](https://user-images.githubusercontent.com/27768375/143790094-884e48b5-4741-40cd-8b87-3f80579524cc.jpeg)
+
+  
+![BRL-USD rate under the last 5 Brazilian presidents](https://user-images.githubusercontent.com/27768375/143790044-d367f635-8921-4e40-b634-a3d14d6d9a0d.jpeg)
+
+</center>
 
 ### Based on the production ready code methods provided in [Production_Ready_Code.ipynb](https://github.com/ivanovitchm/mlops/blob/main/week_04/Production_Ready_Code.ipynb), we made use of try and except to avoid breaks in code execution due to misuse in data manipulation.
