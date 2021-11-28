@@ -38,12 +38,27 @@ euro_to_dollar['US_dollar'] = euro_to_dollar['US_dollar'].astype(float)
 ### Second step: data visualization
 
 - We generated a line plot to visualize the evolution of the euro-dollar exchange rate and of the euro-real-dollar exchange rate.
-- We used the rolling mean technique to smooth the graph curve
-
-\begin{center}
-  
+- We used the rolling mean technique to smooth the graph curve  
 <img width="431" alt="Captura de Tela 2021-11-28 às 19 30 00" src="https://user-images.githubusercontent.com/27768375/143788718-9e85a6a6-0b78-43e8-80cd-96d9fc81a4db.png">
-  
-\end{center}
+- We show how the euro-dollar rate changed during the 2007-2008's financial crisis.
+<img width="541" alt="Captura de Tela 2021-11-28 às 19 39 14" src="https://user-images.githubusercontent.com/27768375/143789096-393a91ee-248f-4185-ae68-42129224a8d1.png">
+
+- We show comparatively how the euro-dollar rate changed under the last four US presidents (George W. Bush (2001-2009), Barack Obama (2009-2017), Donald Trump (2017-2020) and Joe Biden(2021)). We can use a line plot. See the code we use to prepare the dataset for this use:
+~~~ python
+bush_obama_trump_biden = euro_to_dollar.copy(
+                   )[(euro_to_dollar['Time'].dt.year >= 2001) & (euro_to_dollar['Time'].dt.year <= 2021)]
+bush = bush_obama_trump_biden.copy(
+       )[bush_obama_trump_biden['Time'].dt.year < 2009]
+obama = bush_obama_trump_biden.copy(
+       )[(bush_obama_trump_biden['Time'].dt.year >= 2009) & (bush_obama_trump_biden['Time'].dt.year < 2017)]
+trump = bush_obama_trump_biden.copy(
+       )[(bush_obama_trump_biden['Time'].dt.year >= 2017) & (bush_obama_trump_biden['Time'].dt.year < 2021)]
+biden = bush_obama_trump_biden.copy(
+       )[(bush_obama_trump_biden['Time'].dt.year == 2021)]
+~~~
+
+<img width="792" alt="Captura de Tela 2021-11-28 às 19 49 43" src="https://user-images.githubusercontent.com/27768375/143789461-d73e5147-73af-472a-83f9-f3603e77e786.png">
+- Note: At this point our extension begins. In the original guided project there is no analysis for the period of President Biden's government
+
 
 ### Based on the production ready code methods provided in [Production_Ready_Code.ipynb](https://github.com/ivanovitchm/mlops/blob/main/week_04/Production_Ready_Code.ipynb), we made use of try and except to avoid breaks in code execution due to misuse in data manipulation.
