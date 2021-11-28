@@ -63,7 +63,7 @@ biden = bush_obama_trump_biden.copy(
 <img width="792" alt="Captura de Tela 2021-11-28 às 19 49 43" src="https://user-images.githubusercontent.com/27768375/143789461-d73e5147-73af-472a-83f9-f3603e77e786.png">
 
 - Note: more extensions, in the original guided project there is no Brazilian real case study.
-- We show comparatively how the euro-real-dollar rate changed under the last five Brazil presidents (FHC (2000-2002), Lula (2003-2010), Dilma Rousseff (2011-2016), Michel Temer (2016-2018) and Jair M. Bosonaro(2019-2021)). We can use a line plot. See the code we use to prepare the dataset for this use:
+- We show how the euro-dollar rate has changed over the last 20 years. See the code we use to prepare the dataset for this use:
 
 ~~~ python
 exchange_rates.rename(columns={'[Brazilian real ]': 'BRL_real'}, inplace=True) # padronizando para trabalhar com os dados
@@ -84,6 +84,8 @@ brl_to_euro_to_dollar['dollar_rate'] = euro_to_dollar_to_real['BRL_real']/euro_t
   ![BRL-USD rate](https://user-images.githubusercontent.com/27768375/143790094-884e48b5-4741-40cd-8b87-3f80579524cc.jpeg)
 
 </center>
+
+- We show comparatively how the euro-real-dollar rate changed under the last five Brazil presidents (FHC (2000-2002), Lula (2003-2010), Dilma Rousseff (2011-2016), Michel Temer (2016-2018) and Jair M. Bosonaro(2019-2021)). We can use a line plot. See the code we use to prepare the dataset for this use:
  
 ~~~ python
 brl_to_euro_to_dollar['dollar_rolling_mean'] = brl_to_euro_to_dollar['dollar_rate'].rolling(50).mean()
