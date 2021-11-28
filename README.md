@@ -70,11 +70,14 @@ biden = bush_obama_trump_biden.copy(
 ~~~
 
 <center>
-
-![BRL-USD rate](https://user-images.githubusercontent.com/27768375/143790094-884e48b5-4741-40cd-8b87-3f80579524cc.jpeg)
-
   
-![BRL-USD rate under the last 5 Brazilian presidents](https://user-images.githubusercontent.com/27768375/143790044-d367f635-8921-4e40-b634-a3d14d6d9a0d.jpeg)
+  ![BRL-USD rate](https://user-images.githubusercontent.com/27768375/143790094-884e48b5-4741-40cd-8b87-3f80579524cc.jpeg)
+
+</center>
+  
+<center>
+
+  ![BRL-USD rate under the last 5 Brazilian presidents](https://user-images.githubusercontent.com/27768375/143790044-d367f635-8921-4e40-b634-a3d14d6d9a0d.jpeg)
 
 </center>
 
